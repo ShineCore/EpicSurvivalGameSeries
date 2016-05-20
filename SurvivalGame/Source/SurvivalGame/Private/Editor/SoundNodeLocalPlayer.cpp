@@ -10,7 +10,7 @@ void USoundNodeLocalPlayer::ParseNodes(FAudioDevice* AudioDevice, const UPTRINT 
 	// The accesses to the Pawn will be unsafe once we thread audio, deal with this at that point
 	check(IsInGameThread());
 
-	AActor* SoundOwner = ActiveSound.AudioComponent.IsValid() ? ActiveSound.AudioComponent->GetOwner() : NULL;
+	AActor* SoundOwner = ActiveSound.IsAudioComponentValid() ? ActiveSound.GetAudioComponent()->GetOwner() : NULL;
 	APlayerController* PCOwner = Cast<APlayerController>(SoundOwner);
 	APawn* PawnOwner = (PCOwner ? PCOwner->GetPawn() : Cast<APawn>(SoundOwner));
 
