@@ -334,9 +334,9 @@ void ASCharacter::SetIsJumping(bool NewJumping)
 }
 
 
-void ASCharacter::OnLanded(const FHitResult& Hit)
+void ASCharacter::Landed(const FHitResult& Hit)
 {
-	Super::OnLanded(Hit);
+	Super::Landed(Hit);
 
 	SetIsJumping(false);
 }

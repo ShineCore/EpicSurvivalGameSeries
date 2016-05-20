@@ -92,7 +92,7 @@ void ASZombieCharacter::OnSeePlayer(APawn* Pawn)
 
 	ASZombieAIController* AIController = Cast<ASZombieAIController>(GetController());
 	ASBaseCharacter* SensedPawn = Cast<ASBaseCharacter>(Pawn);
-	if (AIController && SensedPawn->IsAlive())
+	if (AIController && SensedPawn != nullptr && SensedPawn->IsAlive())
 	{
 		AIController->SetMoveToTarget(SensedPawn);
 	}
